@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import ReducerComponent from "./reducer.jsx";
 import Memo from "./Memo.jsx";
+import Callback from "./Callback.jsx";
 
 // useReducer
 function reducer(state, action) {
@@ -210,7 +211,12 @@ function Users() {
       <div>
         <Memo />
       </div>
-      <h1>Helooo</h1>
+      <br />
+      <hr />
+      <h1>useCallback</h1>
+        <div>
+          <Callback />
+        </div>
     </div>
   );
 }
