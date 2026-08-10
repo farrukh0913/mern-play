@@ -1,0 +1,23 @@
+import { useMemo, useState } from "react";
+
+function Memo() {
+  const [count, setCount] = useState(0);
+
+  const expensiveCalculation = useMemo(() => {
+    console.log("Calculating...");
+
+    return count * 100;
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Result: {expensiveCalculation}</h2>
+
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+
+      <div>{count}</div>
+    </div>
+  );
+}
+
+export default Memo;

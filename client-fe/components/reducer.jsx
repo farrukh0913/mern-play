@@ -48,7 +48,7 @@ const ReducerComponent = () => {
   };
 
   const handleAddItem = () => {
-    dispatch({ type: 'ADD_ITEM' });
+    dispatch({ type: 'ADD_ITEM' }); 
   };
 
   const handleRemoveItem = id => () => {
