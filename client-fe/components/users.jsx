@@ -7,10 +7,13 @@ import React, {
     useCallback,
     useReducer,
 } from "react";
+import ReducerComponent from "./reducer.jsx";
 
 
 // useReducer
 function reducer(state, action) {
+    console.log("Reducer called with action:", action);
+    console.log("Current state:", state);
     switch (action.type) {
         case "increment":
             return {
@@ -248,6 +251,8 @@ function Users() {
 
             </ul>
 
+<br />
+        <div><ReducerComponent /></div>
         </div>
     );
 }
