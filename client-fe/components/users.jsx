@@ -201,22 +201,6 @@ function Users() {
         ))}
       </ul>
 
-      <br />
-      <div>
-        <ReducerComponent />
-      </div>
-      <br />
-      <hr />
-      <h1>useMemo</h1>
-      <div>
-        <MemoComponent />
-      </div>
-      <br />
-      <hr />
-      <h1>useCallback</h1>
-        <div>
-          <CallbackComponent />
-        </div>
     </div>
   );
 }
