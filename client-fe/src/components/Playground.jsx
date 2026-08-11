@@ -1,7 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function Playground() {
+  const navigate = useNavigate();
+  const goToPage = (page) => navigate(`/${page}`);
+  
+
   return (
     <div>
       <div>
@@ -17,12 +25,12 @@ function Playground() {
           <button>Go to useCallback</button>
         </Link>
 
-        <Link to="/users">
-          <button>Go to Users</button>
-        </Link>
+        <button onClick={() => goToPage("users")}>
+          Go to Users
+        </button>
       </div>
 
-      <h3>React Hooks Playground</h3>
+      <h3>React Hooks Playground 123</h3>
     </div>
   );
 }

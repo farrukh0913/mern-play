@@ -5,12 +5,12 @@ import {
   Link,
 } from "react-router-dom";
 import "./App.css";
-import Users from "../components/users";
-import Playground from "../components/playground";
-import Login from "../components/login";
-import ReducerComponent from "../components/reducer";
-import MemoComponent from "../components/Memo";
-import CallbackComponent from "../components/Callback";
+import Users from "./components/Users";
+import Playground from "./components/Playground";
+import Login from "./components/Login";
+import ReducerComponent from "./components/Reducer";
+import MemoComponent from "./components/Memo";
+import CallbackComponent from "./components/Callback";
 
 function App() {
   return (
