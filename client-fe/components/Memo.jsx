@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-function Memo() {
+function MemoComponent() {
   const [count, setCount] = useState(0);
 
   const expensiveCalculation = useMemo(() => {
@@ -20,4 +20,4 @@ function Memo() {
   );
 }
 
-export default Memo;
+export default MemoComponent;

@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
 // callback is used to memoize a function so that it doesn't get recreated on every render. It is useful when passing functions as props to child components to prevent unnecessary re-renders.
-function Callback() {
+function CallbackComponent() {
   const [count, setCount] = useState(0);
 
-  const handleClick = useCallback(() => {
-    console.log("Button clicked");
-    return count * 2;
+  const handleClick = useCallback((value) => {
+    console.log("Button clicked", value);
+    return count * value;
   }, [count]);
 
   return (
@@ -16,12 +16,12 @@ function Callback() {
         Increase
       </button>
 
-      <button onClick={handleClick}>
+      <button onClick={() => handleClick(3)}>
         Click me
       </button>
-      <div>{handleClick()}</div>
+      <div>{handleClick(count)}</div>
     </div>
   );
 }
 
-export default Callback;
+export default CallbackComponent;

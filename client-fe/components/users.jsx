@@ -8,8 +8,8 @@ import React, {
   useReducer,
 } from "react";
 import ReducerComponent from "./reducer.jsx";
-import Memo from "./Memo.jsx";
-import Callback from "./Callback.jsx";
+import MemoComponent from "./Memo.jsx";
+import CallbackComponent from "./Callback.jsx";
 
 // useReducer
 function reducer(state, action) {
@@ -209,13 +209,13 @@ function Users() {
       <hr />
       <h1>useMemo</h1>
       <div>
-        <Memo />
+        <MemoComponent />
       </div>
       <br />
       <hr />
       <h1>useCallback</h1>
         <div>
-          <Callback />
+          <CallbackComponent />
         </div>
     </div>
   );
