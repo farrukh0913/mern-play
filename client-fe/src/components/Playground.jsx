@@ -30,7 +30,7 @@ function Playground() {
         </button>
       </div>
 
-      <h3>React Hooks Playground 123</h3>
+      <h3>React Hooks Playground </h3>
     </div>
   );
 }

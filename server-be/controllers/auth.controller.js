@@ -31,6 +31,8 @@ let { email, password } = req.body;
       id: user._id,
       name: user.name,
       email: user.email,
+      role: user.role,
+      authenticated: true,
     },
   });
 };
