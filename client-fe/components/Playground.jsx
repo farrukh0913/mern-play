@@ -1,34 +1,28 @@
-import ReducerComponent from "./Reducer";
-import MemoComponent from "./Memo";
-import CallbackComponent from "./Callback";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Playground() {
   return (
     <div>
-      <h1>React Hooks Playground</h1>
-
-      <hr />
-
-      <h2>useReducer</h2>
       <div>
-        <ReducerComponent />
+        <Link to="/reducer">
+          <button>Go to useReducer</button>
+        </Link>
+
+        <Link to="/memo">
+          <button>Go to useMemo</button>
+        </Link>
+
+        <Link to="/callback">
+          <button>Go to useCallback</button>
+        </Link>
+
+        <Link to="/users">
+          <button>Go to Users</button>
+        </Link>
       </div>
 
-      <br />
-      <hr />
-
-      <h2>useMemo</h2>
-      <div>
-        <MemoComponent />
-      </div>
-
-      <br />
-      <hr />
-
-      <h2>useCallback</h2>
-      <div>
-        <CallbackComponent />
-      </div>
+      <h3>React Hooks Playground</h3>
     </div>
   );
 }

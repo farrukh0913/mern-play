@@ -4,7 +4,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-
+import "./App.css";
 import Users from "../components/users";
 import Playground from "../components/playground";
 import Login from "../components/login";
@@ -16,28 +16,28 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">
-          <button>Login</button>
+        <Link to="/" className="nav-button">
+          Login
         </Link>
 
-        <Link to="/users">
-          <button>Users</button>
+        <Link to="/users" className="nav-button">
+          Users
         </Link>
 
-        <Link to="/reducer">
-          <button>useReducer</button>
+        <Link to="/reducer" className="nav-button">
+          useReducer
         </Link>
 
-        <Link to="/memo">
-          <button>useMemo</button>
+        <Link to="/memo" className="nav-button">
+          useMemo
         </Link>
 
-        <Link to="/callback">
-          <button>useCallback</button>
+        <Link to="/callback" className="nav-button">
+          useCallback
         </Link>
 
-        <Link to="/playground">
-          <button>Playground</button>
+        <Link to="/playground" className="nav-button">
+          Playground
         </Link>
       </nav>
 
@@ -51,7 +51,8 @@ function App() {
         <Route path="/memo" element={<MemoComponent />} />
         <Route path="/callback" element={<CallbackComponent />} />
         <Route path="/playground" element={<Playground />} />
-        {/* Wildcard */}
+
+        {/* Catch-all route */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
     </Router>
