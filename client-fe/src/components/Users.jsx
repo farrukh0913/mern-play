@@ -155,7 +155,6 @@ function Users() {
 
       <div>
         <h2>Counter: {state.count}</h2>
-
         <button
           onClick={() =>
             dispatch({
@@ -193,13 +192,13 @@ function Users() {
 
       {/* useMemo */}
 
-      <ul>
+      <div>
         {filteredUsers.map((user) => (
-          <li key={user._id} onClick={() => handleUserClick(user)}>
+          <div key={user._id} onClick={() => handleUserClick(user)}>
             {user.name} --- {user.email}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
 
     </div>
   );
