@@ -10,6 +10,8 @@ function CallbackComponent() {
 
   return (
     <div>
+      <h1>useCallback</h1>
+      <br></br>
       <h1>{count}</h1>
 
       <button onClick={() => setCount(count + 1)}>
