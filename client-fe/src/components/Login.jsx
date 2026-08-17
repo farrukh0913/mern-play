@@ -35,6 +35,8 @@ function Login() {
           console.log("User: Stored", useStore.getState().user);
           useStore.getState().updateUser({ email: "farrukhdev01@gmail.com" });
           console.log("User: Updated", useStore.getState().user);
+          useStore.getState().clearUser();
+          console.log("User: Cleared", useStore.getState().user);
         }
       })
       .catch((error) => {
