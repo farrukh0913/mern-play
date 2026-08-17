@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useStore from "../store/useStore";
 import "./Login.css";
 
 function Login() {
@@ -26,9 +27,15 @@ function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    }).then((response) => response.json()).then((data) => {
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("User: 1", useStore.getState().user);
+        useStore.setState({ user: data.user });
+        console.log("User: 2", useStore.getState().user);
         console.log("Login Response:", data);
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.error("Login Error:", error);
       });
   };
@@ -36,14 +43,12 @@ function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
-
         <div className="login-header">
-          <h1>Welcome Back 👋</h1>
+          <h1>Welcome Back (Zustand Store) 👋</h1>
           <p>Login to your account</p>
         </div>
 
         <form onSubmit={handleSubmit}>
-
           <div className="input-group">
             <label>Email Address</label>
             <input
@@ -55,7 +60,6 @@ function Login() {
               required
             />
           </div>
-
 
           <div className="input-group">
             <label>Password</label>
@@ -79,33 +83,22 @@ function Login() {
             </div>
           </div>
 
-
           <div className="login-options">
             <label>
               <input type="checkbox" />
               Remember me
             </label>
 
-            <a href="#">
-              Forgot Password?
-            </a>
+            <a href="#">Forgot Password?</a>
           </div>
 
-
-          <button className="login-btn">
-            Login
-          </button>
-
+          <button className="login-btn">Login</button>
         </form>
-
 
         <div className="signup">
           Don't have an account?
-          <a href="#">
-            Create account
-          </a>
+          <a href="#">Create account</a>
         </div>
-
       </div>
     </div>
   );
