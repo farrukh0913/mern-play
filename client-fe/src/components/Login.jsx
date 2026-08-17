@@ -3,6 +3,7 @@ import useStore from "../store/useStore";
 import "./Login.css";
 
 function Login() {
+  const updateUser = useStore((state) => state.updateUser);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -19,8 +20,6 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login Data:", formData);
-
     fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
@@ -30,10 +29,13 @@ function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("User: 1", useStore.getState().user);
-        useStore.setState({ user: data.user });
-        console.log("User: 2", useStore.getState().user);
-        console.log("Login Response:", data);
+        if (data?.user?.authenticated) {
+          console.log("User: Response", data.user);
+          useStore.getState().setUser({ ...data.user });
+          console.log("User: Stored", useStore.getState().user);
+          useStore.getState().updateUser({ email: "farrukhdev01@gmail.com" });
+          console.log("User: Updated", useStore.getState().user);
+        }
       })
       .catch((error) => {
         console.error("Login Error:", error);

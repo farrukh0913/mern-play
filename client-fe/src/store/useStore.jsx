@@ -6,6 +6,14 @@ const useStore = create((set) => ({
 
   setUser: (user) => set({ user }),
   clearUser: () => set({ user: null }),
+  // Update specific user fields
+  updateUser: (updates) =>
+    set((state) => ({
+      user: {
+        ...state.user,
+        ...updates,
+      },
+    })),
 
   increment: () =>
     set((state) => ({
