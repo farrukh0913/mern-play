@@ -1,8 +1,10 @@
 import { useState } from "react";
 import useStore from "../store/useStore";
 import "./Login.css";
+import { useAppContext } from "../context/useAppContext";
 
 function Login() {
+    const { user } = useAppContext();
   const updateUser = useStore((state) => state.updateUser);
   const [formData, setFormData] = useState({
     email: "",
@@ -101,6 +103,7 @@ function Login() {
 
         <div className="signup">
           Don't have an account?
+          <h1>{user?.name || "N/A"}</h1>
           <a href="#">Create account</a>
         </div>
       </div>

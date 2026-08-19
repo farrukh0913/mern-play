@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import ReducerComponent from "./components/Reducer";
 import MemoComponent from "./components/Memo";
 import CallbackComponent from "./components/Callback";
+import ContextComponent from "./components/Context";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
           useCallback
         </Link>
 
+        <Link to="/context" className="nav-button">
+          useContext
+        </Link>
+
         <Link to="/playground" className="nav-button">
           Playground
         </Link>
@@ -50,6 +55,7 @@ function App() {
         <Route path="/reducer" element={<ReducerComponent />} />
         <Route path="/memo" element={<MemoComponent />} />
         <Route path="/callback" element={<CallbackComponent />} />
+        <Route path="/context" element={<ContextComponent />} />
         <Route path="/playground" element={<Playground />} />
 
         {/* Catch-all route */}
